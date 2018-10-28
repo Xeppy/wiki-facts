@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 
 class ErrorBoundary extends Component {
     constructor(props) {
@@ -13,7 +13,12 @@ class ErrorBoundary extends Component {
   
     render() {
       if (this.state.hasError) {
-        return <h1>Something went wrong.</h1>;
+        return (
+        <Fragment>
+          <h1>Something went wrong</h1>
+          <h3>Please refresh the page and try again</h3>
+        </Fragment>
+        );
       }
       return this.props.children; 
     }

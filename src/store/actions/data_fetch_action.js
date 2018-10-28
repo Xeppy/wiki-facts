@@ -37,7 +37,6 @@ export function fetchData(api, timeOut= null,) {
       .then(res => res.json())
       .then(json => {
         if(timeExceeded === false) {
-            console.log(json)
           dispatch(fetchContentSuccess(json));
         }
       })
